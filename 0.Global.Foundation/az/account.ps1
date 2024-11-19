@@ -1,7 +1,7 @@
-$tenantId = ""
+$tenantId = "john.phelps@support-partners.com"
 az login --tenant $tenantId
 
-$subscriptionId = ""
+$subscriptionId = "Development Subscription"
 az account set --subscription $subscriptionId
 az account show
 

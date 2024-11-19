@@ -1,4 +1,4 @@
-resourceGroupName = "ArtistAnywhere.Network" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Network" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 
 #################################################################################################
 # Virtual Network (https://learn.microsoft.com/azure/virtual-network/virtual-networks-overview) #

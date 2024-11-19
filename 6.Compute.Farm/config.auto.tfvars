@@ -1,4 +1,4 @@
-resourceGroupName = "ArtistAnywhere.Farm" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Farm" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 
 ######################################################################################################
 # Virtual Machine Scale Sets (https://learn.microsoft.com/azure/virtual-machine-scale-sets/overview) #

@@ -67,6 +67,7 @@ resource azurerm_resource_group network {
   location = local.virtualNetwork.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }
 
@@ -78,5 +79,6 @@ resource azurerm_resource_group network_regions {
   location = each.value.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }

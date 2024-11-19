@@ -64,6 +64,7 @@ resource azurerm_resource_group storage_data_load {
   location = local.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }
 

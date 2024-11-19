@@ -1,4 +1,4 @@
-resourceGroupName = "ArtistAnywhere.Storage" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Storage" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 
 regionName = "" # Optional default region override
 

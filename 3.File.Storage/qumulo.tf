@@ -31,6 +31,7 @@ resource azurerm_resource_group qumulo {
   location = local.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }
 

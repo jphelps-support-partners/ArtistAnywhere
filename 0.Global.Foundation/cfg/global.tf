@@ -1,10 +1,10 @@
 variable subscriptionId {
-  default = "" # Set to your Azure subscription id
+  default = "99dce0fa-8b59-4c2f-9feb-74ff0d409de0" # Set to your Azure subscription id
 }
 
 variable resourceLocation {
   default = {
-    regionName = "SouthCentralUS" # Set from "az account list-locations --query [].name"
+    regionName = "WestUS3" # Set from "az account list-locations --query [].name"
     extendedZone = {
       enable     = false
       name       = "LosAngeles"
@@ -14,7 +14,7 @@ variable resourceLocation {
 }
 
 variable resourceGroupName {
-  default = "ArtistAnywhere" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+  default = "2138disney-rg-dev-westus3-20241109-02" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 }
 
 #############################################################################################################
@@ -23,7 +23,7 @@ variable resourceGroupName {
 
 variable managedIdentity {
   default = {
-    name = "xstudio" # Alphanumeric, underscores and hyphens are allowed
+    name = "dis2138id20241119" # Alphanumeric, underscores and hyphens are allowed
   }
 }
 
@@ -33,7 +33,7 @@ variable managedIdentity {
 
 variable storage {
   default = {
-    accountName = "xstudio0" # Set to a globally unique name (lowercase alphanumeric)
+    accountName = "dis2138stor20241119" # Set to a globally unique name (lowercase alphanumeric)
     containerName = {
       terraformState = "terraform-state"
     }
@@ -46,7 +46,7 @@ variable storage {
 
 variable keyVault {
   default = {
-    name = "xstudio" # Set to a globally unique name (alphanumeric, hyphens)
+    name = "dis2138key20241119" # Set to a globally unique name (alphanumeric, hyphens)
     secretName = {
       sshKeyPublic      = "SSHKeyPublic"
       sshKeyPrivate     = "SSHKeyPrivate"
@@ -70,7 +70,7 @@ variable keyVault {
 
 variable appConfig {
   default = {
-    name = "xstudio"
+    name = "dis2138app20241119"
     key = {
       nvidiaCUDAVersion           = "NVIDIA/CUDA/Version"
       nvidiaOptiXVersion          = "NVIDIA/OptiX/Version"
@@ -92,7 +92,7 @@ variable appConfig {
 
 variable monitor {
   default = {
-    name = "xstudio"
+    name = "dis2138mon20241119"
   }
 }
 

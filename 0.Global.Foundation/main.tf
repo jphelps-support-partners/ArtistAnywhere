@@ -72,6 +72,7 @@ resource azurerm_resource_group studio {
   location = module.global.resourceLocation.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }
 
@@ -80,5 +81,6 @@ resource azurerm_resource_group studio_monitor {
   location = module.global.resourceLocation.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }
