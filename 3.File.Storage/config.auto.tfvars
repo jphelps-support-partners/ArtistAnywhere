@@ -8,8 +8,8 @@ regionName = "" # Optional default region override
 
 storageAccounts = [
   {
-    enable               = false
-    name                 = "xstudio1"         # Name must be globally unique (lowercase alphanumeric)
+    enable               = true
+    name                 = "dis2138blobstorage"         # Name must be globally unique (lowercase alphanumeric)
     type                 = "BlockBlobStorage" # https://learn.microsoft.com/azure/storage/common/storage-account-overview
     tier                 = "Premium"          # https://learn.microsoft.com/azure/storage/common/storage-account-overview#performance-tiers
     redundancy           = "LRS"              # https://learn.microsoft.com/azure/storage/common/storage-redundancy
@@ -37,7 +37,7 @@ storageAccounts = [
   },
   {
     enable               = false
-    name                 = "xstudio2"    # Name must be globally unique (lowercase alphanumeric)
+    name                 = "dis2138filestorage"    # Name must be globally unique (lowercase alphanumeric)
     type                 = "FileStorage" # https://learn.microsoft.com/azure/storage/common/storage-account-overview
     tier                 = "Premium"     # https://learn.microsoft.com/azure/storage/common/storage-account-overview#performance-tiers
     redundancy           = "LRS"         # https://learn.microsoft.com/azure/storage/common/storage-redundancy

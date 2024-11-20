@@ -108,6 +108,9 @@ resource azapi_resource linux {
   for_each = {
     for imageTemplate in var.imageBuilder.templates : imageTemplate.name => imageTemplate if var.computeGallery.platform.linux.enable && imageTemplate.enable && lower(imageTemplate.source.imageDefinition.name) == "linux"
   }
+  tags = {
+    "Owner" = "john.phelps@support-partners.com"
+  }
   name      = each.value.name
   type      = "Microsoft.VirtualMachineImages/imageTemplates@2024-02-01"
   parent_id = azurerm_resource_group.image.id
@@ -264,6 +267,9 @@ resource azapi_resource linux {
 resource azapi_resource windows {
   for_each = {
     for imageTemplate in var.imageBuilder.templates : imageTemplate.name => imageTemplate if var.computeGallery.platform.windows.enable && imageTemplate.enable && startswith(imageTemplate.source.imageDefinition.name, "Win")
+  }
+  tags = {
+    "Owner" = "john.phelps@support-partners.com"
   }
   name      = each.value.name
   type      = "Microsoft.VirtualMachineImages/imageTemplates@2024-02-01"

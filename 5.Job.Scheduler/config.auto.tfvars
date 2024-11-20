@@ -1,4 +1,4 @@
-resourceGroupName = "ArtistAnywhere.JobScheduler" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.JobScheduler" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 
 #########################################################################
 # Virtual Machines (https://learn.microsoft.com/azure/virtual-machines) #
@@ -10,7 +10,7 @@ virtualMachines = [
     name   = "LnxJobScheduler"
     size   = "Standard_D8as_v5" # https://learn.microsoft.com/azure/virtual-machines/sizes
     image = {
-      resourceGroupName = "ArtistAnywhere.Image"
+      resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Image"
       galleryName       = "xstudio"
       definitionName    = "Linux"
       versionId         = "1.0.0"
@@ -44,7 +44,7 @@ virtualMachines = [
         parameters = {
           autoScale = {
             enable                   = true
-            resourceGroupName        = "ArtistAnywhere.Farm"
+            resourceGroupName        = "2138disney-rg-dev-westus3-20241119-02.Farm"
             jobSchedulerName         = "Deadline"
             computeFarmName          = "LnxFarmC"
             computeFarmNodeCountMax  = 100
@@ -69,11 +69,11 @@ virtualMachines = [
     }
   },
   {
-    enable = false
+    enable = true
     name   = "WinJobScheduler"
     size   = "Standard_D8as_v5" # https://learn.microsoft.com/azure/virtual-machines/sizes
     image = {
-      resourceGroupName = "ArtistAnywhere.Image"
+      resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Image"
       galleryName       = "xstudio"
       definitionName    = "WinServer"
       versionId         = "1.0.0"
@@ -107,7 +107,7 @@ virtualMachines = [
         parameters = {
           autoScale = {
             enable                   = true
-            resourceGroupName        = "ArtistAnywhere.Farm"
+            resourceGroupName        = "2138disney-rg-dev-westus3-20241119-02.Farm"
             jobSchedulerName         = "Deadline"
             computeFarmName          = "WinFarmC"
             computeFarmNodeCountMax  = 100

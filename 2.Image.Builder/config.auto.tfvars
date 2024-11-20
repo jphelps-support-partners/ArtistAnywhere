@@ -1,4 +1,4 @@
-resourceGroupName = "ArtistAnywhere.Image" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Image" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 
 ###############################################################################################
 # Compute Gallery (https://learn.microsoft.com/azure/virtual-machines/shared-image-galleries) #
@@ -434,8 +434,8 @@ imageCustomize = {
   storage = {
     binHostUrl = "https://xstudio.blob.core.windows.net/bin"
     authClient = { # Required for image customization build process
-      id     = ""
-      secret = ""
+      id     = "StudioUser123"
+      secret = "Stud10secret#"
     }
   }
   script = { # Enables or disables image customization build scripts

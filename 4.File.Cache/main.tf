@@ -13,8 +13,12 @@ terraform {
       source  = "hashicorp/local"
       version = "~>2.5.0"
     }
+    #avere = {
+      #source  = "hashicorp/avere"
+      #version = "~>1.3.0"
+    #}
     avere = {
-      source  = "hashicorp/avere"
+      source  = "terraform.local/local/avere"
       version = "~>1.3.0"
     }
     time = {
@@ -202,5 +206,6 @@ resource azurerm_resource_group cache {
   location = var.existingNetwork.enable ? var.existingNetwork.regionName : module.global.resourceLocation.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }

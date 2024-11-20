@@ -1,148 +1,150 @@
-resourceGroupName = "ArtistAnywhere.Cache" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Cache" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 
 ######################################################################################################
 # Hammerspace (https://azuremarketplace.microsoft.com/marketplace/apps/hammerspace.hammerspace-byol) #
 ######################################################################################################
 
-hsCache = {
-  enable     = false
-  version    = "24.06.19"
-  namePrefix = "xstudio"
-  domainName = "azure.studio"
-  activeDirectory = {
-    enable   = false
-    realm    = "azure.studio"
-    orgUnit  = ""
-    username = ""
-    password = ""
-  }
-  metadata = { # Anvil
-    machine = {
-      namePrefix = "-anvil"
-      size       = "Standard_E4as_v5"
-      count      = 2
-      adminLogin = {
-        userName     = ""
-        userPassword = ""
-        sshKeyPublic = ""
-        passwordAuth = {
-          disable = true
-        }
-      }
-      osDisk = {
-        storageType = "Premium_LRS"
-        cachingType = "ReadWrite"
-        sizeGB      = 128
-      }
-      dataDisk = {
-        storageType = "Premium_LRS"
-        cachingType = "None"
-        sizeGB      = 256
-      }
-    }
-    network = {
-      acceleration = { # https://learn.microsoft.com/azure/virtual-network/accelerated-networking-overview
-        enable = true
-      }
-    }
-  }
-  data = { # DSX
-    machine = {
-      namePrefix = "-dsx"
-      size       = "Standard_E32as_v5"
-      count      = 3
-      adminLogin = {
-        userName     = ""
-        userPassword = ""
-        sshKeyPublic = ""
-        passwordAuth = {
-          disable = true
-        }
-      }
-      osDisk = {
-        storageType = "Premium_LRS"
-        cachingType = "ReadWrite"
-        sizeGB      = 128
-      }
-      dataDisk = {
-        storageType = "Premium_LRS"
-        cachingType = "None"
-        sizeGB      = 256
-        count       = 3
-        raid0 = {
-          enable = false
-        }
-      }
-    }
-    network = {
-      acceleration = { # https://learn.microsoft.com/azure/virtual-network/accelerated-networking-overview
-        enable = true
-      }
-    }
-  }
-  proximityPlacementGroup = { # https://learn.microsoft.com/azure/virtual-machines/co-location
-    enable = false
-  }
-  privateDnsTier = {
-    metadata = false
-  }
-  shares = [
-    {
-      enable = true
-      name   = "volume1"
-      path   = "/volume1"
-      size   = 0
-      export = "*,ro,no-root-squash,insecure"
-    },
-    {
-      enable = true
-      name   = "volume2"
-      path   = "/volume2"
-      size   = 0
-      export = "*,ro,no-root-squash,insecure"
-    }
-  ]
-  storageTargets = [
-    {
-      enable = true
-      node = {
-        name = "anf-node1"
-        type = "OTHER"
-        ip   = "10.1.193.4"
-      }
-      volume = {
-        name      = "anf-volume1"
-        type      = "READ_ONLY"
-        path      = "/volume1"
-        shareName = "volume1"
-      }
-    },
-    {
-      enable = true
-      node = {
-        name = "anf-node2"
-        type = "OTHER"
-        ip   = "10.1.193.4"
-      }
-      volume = {
-        name      = "anf-volume2"
-        type      = "READ_ONLY"
-        path      = "/volume2"
-        shareName = "volume2"
-      }
-    }
-  ]
-  volumeGroups = [
-    {
-      enable = true
-      name   = "anf"
-      volumeNames = [
-        "anf-volume1",
-        "anf-volume2"
-      ]
-    }
-  ]
-}
+# hsCache = {
+  # enable     = false
+  # version    = "24.06.19"
+  # namePrefix = "xstudio"
+  # domainName = "azure.studio"
+  # activeDirectory = {
+    # enable   = false
+    # # enable   = true
+    # realm    = "azure.studio"
+    # orgUnit  = ""
+    # username = ""
+    # password = ""
+  # }
+  # metadata = { # Anvil
+    # machine = {
+      # namePrefix = "-anvil"
+      # size       = "Standard_E4as_v5"
+      # count      = 2
+      # adminLogin = {
+        # userName     = ""
+        # userPassword = ""
+        # sshKeyPublic = ""
+        # passwordAuth = {
+          # disable = true
+        # }
+      # }
+      # osDisk = {
+        # storageType = "Premium_LRS"
+        # cachingType = "ReadWrite"
+        # sizeGB      = 128
+      # }
+      # dataDisk = {
+        # storageType = "Premium_LRS"
+        # cachingType = "None"
+        # sizeGB      = 256
+      # }
+    # }
+    # network = {
+      # acceleration = { # https://learn.microsoft.com/azure/virtual-network/accelerated-networking-overview
+        # enable = true
+      # }
+    # }
+  # }
+  # data = { # DSX
+    # machine = {
+      # namePrefix = "-dsx"
+      # size       = "Standard_E32as_v5"
+      # count      = 3
+      # adminLogin = {
+        # userName     = ""
+        # userPassword = ""
+        # sshKeyPublic = ""
+        # passwordAuth = {
+          # disable = true
+        # }
+      # }
+      # osDisk = {
+        # storageType = "Premium_LRS"
+        # cachingType = "ReadWrite"
+        # sizeGB      = 128
+      # }
+      # dataDisk = {
+        # storageType = "Premium_LRS"
+        # cachingType = "None"
+        # sizeGB      = 256
+        # count       = 3
+        # raid0 = {
+          # enable = false
+        # }
+      # }
+    # }
+    # network = {
+      # acceleration = { # https://learn.microsoft.com/azure/virtual-network/accelerated-networking-overview
+        # enable = true
+      # }
+    # }
+  # }
+
+  # proximityPlacementGroup = { # https://learn.microsoft.com/azure/virtual-machines/co-location
+    # enable = false
+  # }
+  # privateDnsTier = {
+    # metadata = false
+  # }
+  # shares = [
+    # {
+      # enable = true
+      # name   = "volume1"
+      # path   = "/volume1"
+      # size   = 0
+      # export = "*,ro,no-root-squash,insecure"
+    # },
+    # {
+      # enable = true
+      # name   = "volume2"
+      # path   = "/volume2"
+      # size   = 0
+      # export = "*,ro,no-root-squash,insecure"
+    # }
+  # ]
+  # storageTargets = [
+    # {
+      # enable = true
+      # node = {
+        # name = "anf-node1"
+        # type = "OTHER"
+        # ip   = "10.1.193.4"
+      # }
+      # volume = {
+        # name      = "anf-volume1"
+        # type      = "READ_ONLY"
+        # path      = "/volume1"
+        # shareName = "volume1"
+      # }
+    # },
+    # {
+      # enable = true
+      # node = {
+        # name = "anf-node2"
+        # type = "OTHER"
+        # ip   = "10.1.193.4"
+      # }
+      # volume = {
+        # name      = "anf-volume2"
+        # type      = "READ_ONLY"
+        # path      = "/volume2"
+        # shareName = "volume2"
+      # }
+    # }
+  # ]
+  # volumeGroups = [
+    # {
+      # enable = true
+      # name   = "anf"
+      # volumeNames = [
+        # "anf-volume1",
+        # "anf-volume2"
+      # ]
+    # }
+  # ]
+# }
 
 ##############################################################################
 # HPC Cache (https://learn.microsoft.com/azure/hpc-cache/hpc-cache-overview) #
@@ -155,26 +157,26 @@ hsCache = {
 #      Standard_2G - 3072, 6144, 12288    Read Write
 #      Standard_4G - 6144, 12288, 24576   Read Write
 #      Standard_8G - 12288, 24576, 49152  Read Write
-hpcCache = {
-  enable     = false
-  name       = "xstudio"
-  throughput = "Standard_L4_5G"
-  size       = 21623
-  mtuSize    = 1500
-  ntpHost    = ""
-  dns = {
-    ipAddresses = [ # Maximum of 3 IP addresses
-    ]
-    searchDomain = ""
-  }
-}
+# hpcCache = {
+  # enable     = false
+  # name       = "xstudio"
+  # throughput = "Standard_L4_5G"
+  # size       = 21623
+  # mtuSize    = 1500
+  # ntpHost    = ""
+  # dns = {
+    # ipAddresses = [ # Maximum of 3 IP addresses
+    # ]
+    # searchDomain = ""
+  # }
+# }
 
 #################################################################################
 # Avere vFXT (https://learn.microsoft.com/azure/avere-vfxt/avere-vfxt-overview) #
 #################################################################################
 
 vfxtCache = {
-  enable = false
+  enable = true
   name   = "xstudio"
   cluster = {
     nodeSize      = 1024 # Set to either 1024 GB (1 TB) or 4096 GB (4 TB) nodes
@@ -188,7 +190,7 @@ vfxtCache = {
       controller = ""
       node       = ""
     }
-  }
+   }
   activeDirectory = {
     enable            = false
     domainName        = ""

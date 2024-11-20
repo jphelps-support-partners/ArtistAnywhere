@@ -1,4 +1,4 @@
-resourceGroupName = "ArtistAnywhere.Workstation" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
+resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Workstation" # Alphanumeric, underscores, hyphens, periods and parenthesis are allowed
 
 #########################################################################
 # Virtual Machines (https://learn.microsoft.com/azure/virtual-machines) #
@@ -11,7 +11,7 @@ virtualMachines = [
     size   = "Standard_NV72ads_A10_v5" # https://learn.microsoft.com/azure/virtual-machines/sizes
     count  = 1
     image = {
-      resourceGroupName = "ArtistAnywhere.Image"
+      resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Image"
       galleryName       = "xstudio"
       definitionName    = "Linux"
       versionId         = "3.0.0"
@@ -65,7 +65,7 @@ virtualMachines = [
     size   = "Standard_NG32ads_V620_v1" # https://learn.microsoft.com/azure/virtual-machines/sizes
     count  = 1
     image = {
-      resourceGroupName = "ArtistAnywhere.Image"
+      resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Image"
       galleryName       = "xstudio"
       definitionName    = "Linux"
       versionId         = "3.1.0"
@@ -119,7 +119,7 @@ virtualMachines = [
     size   = "Standard_NV72ads_A10_v5" # https://learn.microsoft.com/azure/virtual-machines/sizes
     count  = 1
     image = {
-      resourceGroupName = "ArtistAnywhere.Image"
+      resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Image"
       galleryName       = "xstudio"
       definitionName    = "WinArtist"
       versionId         = "3.0.0"
@@ -173,7 +173,7 @@ virtualMachines = [
     size   = "Standard_NG32ads_V620_v1" # https://learn.microsoft.com/azure/virtual-machines/sizes
     count  = 1
     image = {
-      resourceGroupName = "ArtistAnywhere.Image"
+      resourceGroupName = "2138disney-rg-dev-westus3-20241119-02.Image"
       galleryName       = "xstudio"
       definitionName    = "WinArtist"
       versionId         = "3.1.0"

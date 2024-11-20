@@ -125,5 +125,6 @@ resource azurerm_resource_group image {
   location = module.global.resourceLocation.regionName
   tags = {
     AAA = basename(path.cwd)
+    Owner = "john.phelps@support-partners.com"
   }
 }
