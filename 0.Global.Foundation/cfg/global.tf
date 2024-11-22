@@ -1,4 +1,5 @@
 variable subscriptionId {
+  # default = "" # Set to your Azure subscription id
   default = "99dce0fa-8b59-4c2f-9feb-74ff0d409de0" # Set to your Azure subscription id
 }
 
